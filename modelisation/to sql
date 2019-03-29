@@ -1,0 +1,3 @@
+tedia2sql -i diagramme_de_class.dia -o schema.sql -t innodb -f
+http://www.coderholic.com/automatic-sql-generation-using-dia/
+http://dia-installer.de/parse-dia-sql/index.html.en
