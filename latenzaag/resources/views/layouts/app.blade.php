@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Athena') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
+    @yield('style')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -24,7 +25,8 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="{{asset('img/logo.png')}}" alt="Athena">
+                    {{-- {{ config('app.name', 'Athena') }} --}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -33,7 +35,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li> <a class="navbar-brand" href="{{ url('/commande') }}"> Commande</a> </li>
+                        <li> <a class="navbar-brand" href="{{ url('/contact') }}"> Contact</a> </li>
+                        <li> <a class="navbar-brand" href="{{ url('/apropre') }}"> Apropre</a> </li>
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Chercher" aria-label="Chercher">
+                                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Chercher</button>
+                              </form>
+                        <li>
+                            
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -60,12 +71,15 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('home') }}">Home</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
+
+                            
                         @endguest
                     </ul>
                 </div>
@@ -76,5 +90,6 @@
             @yield('content')
         </main>
     </div>
+    @yield('js')
 </body>
 </html>
