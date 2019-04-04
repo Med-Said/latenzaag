@@ -19,6 +19,8 @@ class CreateArticlesStocksTable extends Migration
             $table->string('nom');
             $table->string('marque');
             $table->double('prix');
+            $table->longText('description');
+            $table->string('img');
         });
     }
 

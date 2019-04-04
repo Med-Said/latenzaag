@@ -35,13 +35,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li> <a class="navbar-brand" href="{{ url('/commande') }}"> Commande</a> </li>
+                        <li> <a class="navbar-brand" href="{{ url('/commander') }}"> Commande</a> </li>
                         <li> <a class="navbar-brand" href="{{ url('/contact') }}"> Contact</a> </li>
                         <li> <a class="navbar-brand" href="{{ url('/apropre') }}"> Apropre</a> </li>
-                            <form class="form-inline">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Chercher" aria-label="Chercher">
+                            <form class="form-inline" action="{{url('resultats')}}">
+                                <input name="mot" class="form-control mr-sm-2" type="search" placeholder="Chercher" aria-label="Chercher">
                                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Chercher</button>
-                              </form>
+                            </form>
                         <li>
                             
                         </li>

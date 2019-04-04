@@ -27,4 +27,12 @@ class HomeController extends Controller
         return view('home');
         // return view('index', ['articles' => $articles]);
     }
+
+    public function chercher(Request $request){
+
+        $mot = request()->mot;
+        $res = DB::table('articles_stocks')->where('nom', 'like', '%' . $mot . '%')
+        ->get();
+        return view("resultats", ['res' => $res, 'mot' => $mot]);
+    }
 }

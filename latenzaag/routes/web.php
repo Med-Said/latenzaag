@@ -41,3 +41,9 @@ Route::get('/index', function () {
 Route::get('/test', function () {
     return view('test');
 });
+
+
+
+Route::get('commander', 'CommandController@index');
+Route::get('categorie', 'CommandController@articlesParGategories');
+Route::get('resultats', 'HomeController@chercher');
