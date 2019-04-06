@@ -23,12 +23,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $articles = DB::table('articles_stocks')->select('id', 'nom', 'prix', 'marque')->get();
-        return view('home');
-        // return view('index', ['articles' => $articles]);
+        $id = \Auth::user()->id;//current user id
+
+        $commandes = $users = DB::table('users_commandes')
+            ->join('commandes', 'users_commandes.commandes_id', '=', 'commandes.id')
+            ->select('users_commandes.commandes_id', 'commandes.montant')
+            ->where('users_commandes.users_id', '=', $id)
+            ->get();
+        return view('home',['commandes' => $commandes]);
     }
 
-    public function chercher(Request $request){
+     function chercher(Request $request){
 
         $mot = request()->mot;
         $res = DB::table('articles_stocks')->where('nom', 'like', '%' . $mot . '%')

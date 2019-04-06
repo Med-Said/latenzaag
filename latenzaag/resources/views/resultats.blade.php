@@ -23,7 +23,7 @@
 <div class="card-body">
   <h5 class="card-title">{{$item->nom}} ({{$item->prix}} DT)</h5>
   <p class="card-text">{{$item->description}}</p>
-  <a href="#" class="btn btn-primary">Go somewhere</a>
+  <a href="#" class="btn btn-primary">Ajouter <img src="{{asset('img/pannier32.png')}}" alt="pannier32"></a>
 </div>
 </div> 
 @endforeach

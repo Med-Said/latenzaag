@@ -17,6 +17,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
+    <style>
+        .pannier{
+            margin-left: 10px;
+        }
+    </style>
     @yield('style')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -78,7 +83,13 @@
                                     </form>
                                 </div>
                             </li>
-
+                            <li class="pannier">
+                                <a href="{{ route('affichPannier') }}">
+                                    <img src="{{asset('img/pannier.png')}}" alt="pannier"> 
+                                    <span style="color : red;">@php echo session('nbrArticles') @endphp</span>
+                                </a>
+                                    
+                            </li>
                             
                         @endguest
                     </ul>

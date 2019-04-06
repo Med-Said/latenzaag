@@ -18,6 +18,10 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+
+        'App\Events\PannierEvent' => [
+            'App\Listeners\PannierListener',
+        ],
     ];
 
     /**
@@ -29,6 +33,5 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
     }
 }

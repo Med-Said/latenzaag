@@ -47,3 +47,8 @@ Route::get('/test', function () {
 Route::get('commander', 'CommandController@index');
 Route::get('categorie', 'CommandController@articlesParGategories');
 Route::get('resultats', 'HomeController@chercher');
+Route::post('pannier', 'PannierController@index')->name("pannier");
+Route::get('affichPannier', 'PannierController@showPannier')->name("affichPannier");
+Route::post('lancerCommande', 'PannierController@commander')->name("lancerCommande");
+Route::get('annulerCommande', 'PannierController@annulerCommande')->name("annulerCommande");
+

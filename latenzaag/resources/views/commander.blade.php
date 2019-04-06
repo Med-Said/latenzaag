@@ -31,12 +31,13 @@
     <div class="card-body">
       <h5 class="card-title">{{$article->nom}} ({{$article->prix}} DT)</h5>
       <p class="card-text">{{$article->description}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <form class="form-inline" action="{{route('pannier')}}" method="POST">
+        {{csrf_field()}}
+      <input type="hidden" name="article" id="article" value="{{$article->id . '--' . $article->nom . '--' . $article->prix . '--' . $article->marque . '--' . $article->description . '--' . $article->img}}">
+    <button type="submit" class="btn btn-primary my-1">Ajouter <img src="{{asset('img/pannier32.png')}}" alt="pannier32"> </button>
+    </form>
     </div>
   </div> 
 @endforeach
 
- 
 @endsection
-
-
