@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('nni')->unique();
             $table->string('tel')->unique();
             $table->string('email')->unique();
+            $table->boolean('isAdmin')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

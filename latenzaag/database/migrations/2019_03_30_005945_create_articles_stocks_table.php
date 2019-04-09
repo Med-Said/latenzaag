@@ -21,6 +21,7 @@ class CreateArticlesStocksTable extends Migration
             $table->double('prix');
             $table->longText('description');
             $table->string('img');
+            $table->timestamps();
         });
     }
 

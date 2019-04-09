@@ -58,7 +58,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('img/iphone.jpg') }}" alt="First slide">
+                <img class="d-block w-100" src="{{ asset('img/1_iphone.jpg') }}" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                         <h5>titre</h5>
                         <p>beaucoup de contenu</p>
@@ -93,7 +93,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('img/iphone.jpg') }}" alt="First slide">
+                <img class="d-block w-100" src="{{ asset('img/1_iphone.jpg') }}" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                         <h5>titre</h5>
                         <p>beaucoup de contenu</p>
@@ -128,7 +128,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('img/iphone.jpg') }}" alt="First slide">
+                <img class="d-block w-100" src="{{ asset('img/1_iphone.jpg') }}" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                         <h5>titre</h5>
                         <p>beaucoup de contenu</p>

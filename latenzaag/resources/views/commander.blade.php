@@ -27,7 +27,7 @@
 
 @foreach ($articles as $article)
     <div class="card" style="width: 18rem;">
-    <img src="{{asset('img/' . $article->img . '.jpg')}}" class="card-img-top" alt="...">
+    <img src="{{asset('img/' . $article->img)}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{$article->nom}} ({{$article->prix}} DT)</h5>
       <p class="card-text">{{$article->description}}</p>

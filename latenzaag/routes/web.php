@@ -51,4 +51,27 @@ Route::post('pannier', 'PannierController@index')->name("pannier");
 Route::get('affichPannier', 'PannierController@showPannier')->name("affichPannier");
 Route::post('lancerCommande', 'PannierController@commander')->name("lancerCommande");
 Route::get('annulerCommande', 'PannierController@annulerCommande')->name("annulerCommande");
+Route::get('manage','AdminController@index')->name('manage');
 
+// send data :  (users, commandes and articles)
+Route::get('manage/{table}', 'AdminController@sendData')->name('sendData');
+
+
+
+
+Route::resource('articles_stocks', 'ArticleStockController');
+
+
+
+Route::get('/userForm', function () {
+    return view('admin.articleForms');
+});
+
+
+// Route::get('/userForm', function () {
+//     return view('admin.userForms');
+// });
+
+// Route::get('/userForm', function () {
+//     return view('admin.userForms');
+// });
