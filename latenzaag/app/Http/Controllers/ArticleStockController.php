@@ -41,6 +41,15 @@ class ArticleStockController extends Controller
     public function store(Request $request)
     {
 
+        //form validation 
+        $request->validate([
+			'categorie' => 'required|string',
+            'marque' => 'required|string|max:191',
+            'nom' => 'required|string|max:191',
+            'prix' => 'required|numeric',
+            'img' => 'required|image'
+        ]);
+
 
         //current article ID (last ID in table + 1)
         $id = DB::table('articles_stocks')->orderBy('updated_at', 'desc')->first()->id + 1;

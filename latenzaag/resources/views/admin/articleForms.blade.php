@@ -64,7 +64,7 @@
                     <div class="col-md-4">
                             <label for="img">Image.jpg</label>
                         <img src="{{asset('img/1_iphone.jpg')}}" class="card-img" alt="...">
-                        <input required type="file" name="img" id="img">
+                        <input required type="image" name="img" id="img">
                     </div>
                     
                     
@@ -91,7 +91,13 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="prix">Prix</label>
-                                                <input required  name="prix" type="text" class="form-control" id="prix">
+                                                <input required  name="prix" type="number" class="form-control{{ $errors->has('prix') ? ' is-invalid' : '' }}" id="prix" value="{{ old('prix') }}" autofocus>
+                                               
+                                                @if ($errors->has('prix'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('prix') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                             <div class="form-group col-md-2">
                                                 {{-- <label for="id">Id</label>
