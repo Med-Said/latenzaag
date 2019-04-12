@@ -12,10 +12,20 @@
 
 <style>
     .card{
-        color: red;
+        color: blue;
         display: inline;
         margin: 7px;
         float: left;
+        height: 314px;
+        overflow-y: scroll;
+    }
+    .categorie{
+      width: 30%;
+      margin: 0 auto;
+    }
+    .article{
+      width: 95%;
+      margin-left: 4%;
     }
 </style>
 
@@ -25,6 +35,8 @@
 
 @include('layouts.partials.categorieOption')
 
+<div class="article">
+  
 @foreach ($articles as $article)
     <div class="card" style="width: 18rem;">
     <img src="{{asset('img/' . $article->img)}}" class="card-img-top" alt="...">
@@ -39,5 +51,7 @@
     </div>
   </div> 
 @endforeach
+</div>
+
 
 @endsection

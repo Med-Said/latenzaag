@@ -12,6 +12,11 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    {{-- jQuery form validation plugin --}}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -20,6 +25,10 @@
     <style>
         .pannier{
             margin-left: 10px;
+
+        }
+        body{
+            font-family: 'Open Sans', sans-serif;
         }
     </style>
     @yield('style')
@@ -41,8 +50,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li> <a class="navbar-brand" href="{{ url('/commander') }}"> Commande</a> </li>
-                        <li> <a class="navbar-brand" href="{{ url('/contact') }}"> Contact</a> </li>
-                        <li> <a class="navbar-brand" href="{{ url('/apropre') }}"> Apropre</a> </li>
+                        <li> <a class="navbar-brand" href="{{ url('/construction')}}"> Contact</a> </li>
+                        <li> <a class="navbar-brand" href="{{ url('/construction') }}"> Apropre</a> </li>
                             <form class="form-inline" action="{{url('resultats')}}">
                                 <input name="mot" class="form-control mr-sm-2" type="search" placeholder="Chercher" aria-label="Chercher">
                                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Chercher</button>
@@ -57,11 +66,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
                             @endif
                         @else

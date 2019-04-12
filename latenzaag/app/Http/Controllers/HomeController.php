@@ -13,6 +13,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        //ceci permet de verifier si l'utilisateur et connecte et a bien verifie son address email
+        //avant d'afficher la pages hone
         $this->middleware(['auth', 'verified']);
     }
 
@@ -37,7 +39,9 @@ class HomeController extends Controller
 
         $mot = request()->mot;
         $res = DB::table('articles_stocks')->where('nom', 'like', '%' . $mot . '%')
-        ->get();
+                                            ->orWhere('marque', 'like', '%' . $mot . '%')
+                                            ->orWhere('description', 'like', '%' . $mot . '%')
+                                            ->get();
         return view("resultats", ['res' => $res, 'mot' => $mot]);
     }
 }

@@ -3,22 +3,28 @@
 
 @section('style')
     <style>
-            .card{
-        color: blue ;
-        text-align: center;
-        display: inline-block;
+           
+    .card{
+        color: blue;
+        display: inline;
         margin: 7px;
-        float: left;
-    }
+        width: 100%;
+        /* overflow-y: scroll; */
+        }
+
+        h2{
+            text-align: center;
+            text-transform: uppercase;
+        }
     </style>
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container main">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
-                <div class="card-header"><h5>Vos commandes</h5></div>
+                <div class="card-header"><h2>Vos commandes</h2></div>
 
                 <div class="card-body">
                     @if (session('status'))

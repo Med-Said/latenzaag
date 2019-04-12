@@ -40,10 +40,9 @@ class ArticleStockController extends Controller
 
     public function store(Request $request)
     {
-
         //form validation 
         $request->validate([
-			'categorie' => 'required|string',
+			'categorie' => 'required|string|max:191',
             'marque' => 'required|string|max:191',
             'nom' => 'required|string|max:191',
             'prix' => 'required|numeric',
@@ -51,8 +50,12 @@ class ArticleStockController extends Controller
         ]);
 
 
-        //current article ID (last ID in table + 1)
-        $id = DB::table('articles_stocks')->orderBy('updated_at', 'desc')->first()->id + 1;
+        if(DB::table('articles_stocks')->orderBy('updated_at', 'desc')->first())
+            //current article ID (last ID in table + 1)
+            $id = DB::table('articles_stocks')->orderBy('updated_at', 'desc')->first()->id + 1;
+        else
+            $id = 1;
+        
 
         if ($request->hasFile('img')) {
 
@@ -60,6 +63,12 @@ class ArticleStockController extends Controller
             $image = $request->img;
             $fileName = $image->getClientOriginalName();
             $fileExtension = $image->getClientOriginalExtension();
+
+            //en plus de laravel validate , manuel image verification!
+
+            if($fileExtension != 'jpg' && $fileExtension != 'jpeg' && $fileExtension != 'png'){
+                return redirect('/manage');
+            }
 
             $image_resize = Image::make($request->img->getRealPath())->resize(340, 340);//resize image
 

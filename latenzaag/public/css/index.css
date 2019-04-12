@@ -1,0 +1,51 @@
+/* slider */
+.carousel-inner .carousel-item {
+    transition: -webkit-transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+  }
+
+  body{
+    margin: 0px;
+    padding: 0px;
+}
+.slider{
+position: relative;
+width: 100%;
+/* margin-left: 1%; */
+
+background:  #b3b3ff;
+margin-top: 21px;
+margin-bottom: 21px;
+border-radius: 5%;
+
+}
+.slider > div{
+margin-left: 7%;
+}
+
+table{
+margin-top: 21px;
+margin-bottom: 21px;
+}
+
+.paginateLinks{
+float: right;
+}
+
+table{
+text-align: center;
+}
+
+.footer{
+clear: both;
+}
+h1{
+text-align: center;
+margin-top: 28px;
+margin-bottom: 28px; 
+}
+
+.welcomSlider{
+margin-bottom: 21px;
+}

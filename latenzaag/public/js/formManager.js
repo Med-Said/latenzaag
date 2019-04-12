@@ -12,7 +12,7 @@ $('#commandeModifierForm').css('display','none');
 $('#commandeSupprimerForm').css('display','none');
 // // {{-- article forms --}}
 $('#articleAfficherForm').css('display','none');
-$('#articleAjouterForm').css('display','none');
+// $('#articleAjouterForm').css('display','none');
 $('#articleModifierForm').css('display','none');
 $('#articleSupprimerForm').css('display','none');
 

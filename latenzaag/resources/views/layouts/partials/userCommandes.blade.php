@@ -5,7 +5,7 @@
 @endphp
 
 @foreach ($commandes as $commande)
-    <div class="card border-primary mb-3" style="max-width: 18rem;">
+    <div class="card border-primary mb-3" style="text-align : center;">
         <div class="card-header">{{$countCommandes++ }}. Montant : {{$commande->montant}} DT</div>
         <div class="card-body text-primary">
                 @php $articles = getCommandeArticles($commande->commandes_id) @endphp

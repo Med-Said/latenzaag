@@ -156,14 +156,14 @@
             <section class="content" >
                 <div class="divForm">
                     <div class="card border-primary mb-3" style="width: 70%; margin-left: 15%;">
-                        <div class="card-header">Ajouter un article : <button id="addArticle" class="btn btn-outline-primary">Afficher</button></div> 
+                        <div class="card-header">Ajouter un article : <button id="addArticle" class="btn btn-outline-primary">Cacher</button></div> 
                         <div class="card-body text-primary">
                             <h5 class="card-title">Ajouter un article</h5>
 
 
                              @include('admin.articleForms') {{-- forms commandeForms userForms --}}
-                             @include('admin.userForms') {{--forms commandeForms userForms--}}
-                             @include('admin.commandeForms') {{--forms commandeForms userForms--}}
+                             {{-- @include('admin.userForms') forms commandeForms userForms --}}
+                             {{-- @include('admin.commandeForms') forms commandeForms userForms --}}
 
 
                         </div>
@@ -186,7 +186,7 @@
                                   </ul>
                                 </div>
                                 <div class="card-body">
-                                  <h5 class="card-title">Special title treatment</h5>
+                                  <h5 class="card-title"></h5>
                                   
                                   @isset($users)
                                   <table class="table">
@@ -203,6 +203,9 @@
                                         </thead>
                                         <tbody>
                                         @foreach ($users as $user)
+                                        @if ($user->isAdmin != 1)
+                                            
+                                       
                                         <tr>
                                             <th scope="row">{{$user->id}}</th>
                                             <td>{{$user->name}}</td>
@@ -212,6 +215,7 @@
                                             <td>{{$user->lieu}}</td>
                                             <td><button class="btn btn-light"><img src="{{asset('img/tap.png')}}" alt=""></button></td>
                                         </tr>
+                                        @endif
                                         @endforeach
                                     
                                         </tbody>
@@ -276,8 +280,7 @@
                                 </table>
                                   @endisset
                                     
-                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                  
                                 </div>
                               </div>
                 </div>
@@ -297,6 +300,11 @@
 
     <script src="{{asset('js/jQuery.js')}}"></script>
     <script src="{{asset('js/formManager.js')}}"></script>
+
+    {{-- jQuery form validation plugin --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="{{asset('js/validation.js')}}"></script>
 
 
     <script src="{{asset('admin/vendors/jquery/dist/jquery.min.js')}}"></script>
@@ -328,6 +336,7 @@
                 normalizeFunction: 'polynomial'
             });
         })(jQuery);
+
     </script>
 
 </body>

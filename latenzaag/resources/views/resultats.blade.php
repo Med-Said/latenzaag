@@ -4,10 +4,18 @@
 @section('style')
     <style>
         .card{
-            color: red;
-            display: inline;
-            margin: 7px;
-            float: left;
+        color: blue;
+        display: inline;
+        margin: 7px;
+        float: left;
+        height: 314px;
+        overflow-y: scroll;
+        }
+        h2{
+          text-align: center;
+        }
+        em{
+          color: blue;
         }
     </style>
 @endsection
@@ -15,11 +23,11 @@
 
 @section('content')
 
-<p>Resultats de votre recherche "{{$mot}}"</p>
+<h2>Resultats de votre recherche ' <em>{{$mot}}</em> '</h2>
 
 @foreach ($res as $item)
 <div class="card" style="width: 18rem;">
-<img src="{{asset('img/' . $item->img . '.jpg')}}" class="card-img-top" alt="...">
+<img src="{{asset('img/' . $item->img)}}" class="card-img-top" alt="...">
 <div class="card-body">
   <h5 class="card-title">{{$item->nom}} ({{$item->prix}} DT)</h5>
   <p class="card-text">{{$item->description}}</p>

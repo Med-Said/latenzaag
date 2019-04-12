@@ -19,59 +19,36 @@ Route::get('/', function () {
     return view('index', ['articles' => $articles]);
     // return view('index');
     // return view('welcome');
-});
+})->name('index');
 
+
+
+//'verify' -> middleware n'autorise que les utilisateur ligitime(verified there emails)
 Auth::routes(['verify' => true]);
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-//middleware n'autorise que les utilisateur ligitime(verifid there emails)
-Route::get('profile', function () {
-    return "welcom verified user" ;
-})->middleware('verified');
-
-
-Route::get('/index', function () {
-    return view('index');
-});
-
-
-
-Route::get('/test', function () {
-    return view('test');
-});
-
-
+Route::get('resultats', 'HomeController@chercher');
 
 Route::get('commander', 'CommandController@index');
 Route::get('categorie', 'CommandController@articlesParGategories');
-Route::get('resultats', 'HomeController@chercher');
+
 Route::post('pannier', 'PannierController@index')->name("pannier");
 Route::get('affichPannier', 'PannierController@showPannier')->name("affichPannier");
 Route::post('lancerCommande', 'PannierController@commander')->name("lancerCommande");
 Route::get('annulerCommande', 'PannierController@annulerCommande')->name("annulerCommande");
-Route::get('manage','AdminController@index')->name('manage');
 
+Route::get('manage','AdminController@index')->name('manage');
 // send data :  (users, commandes and articles)
 Route::get('manage/{table}', 'AdminController@sendData')->name('sendData');
-
-
-
-
 Route::resource('articles_stocks', 'ArticleStockController');
 
 
 
-Route::get('/userForm', function () {
-    return view('admin.articleForms');
-});
+Route::get('denied',function ()
+{
+    return view('admin.403');
+})->name('denied');
 
 
-// Route::get('/userForm', function () {
-//     return view('admin.userForms');
-// });
-
-// Route::get('/userForm', function () {
-//     return view('admin.userForms');
-// });
+Route::get('construction',function(){
+    return view('construction'); 
+})->name('construction');

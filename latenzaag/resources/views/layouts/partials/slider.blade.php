@@ -5,10 +5,10 @@
             <img src="{{ asset('img/slider1.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-            <img src="{{ asset('img/slider2.jpg') }}" class="d-block w-100" alt="...">
+            <img src="{{ asset('img/slider3.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-            <img src="{{ asset('img/slider3.jpg') }}" class="d-block w-100" alt="...">
+            <img src="{{ asset('img/slider2.jpg') }}" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

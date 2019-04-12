@@ -2,50 +2,16 @@
 
 
 @section('style')
-    <style>
-        body{
-            margin: 0px;
-            padding: 0px;
-        }
-    .slider{
-        position: relative;
-        width: 100%;
-        /* margin-left: 1%; */
+    <link rel="stylesheet" href="{{asset('css/index.css')}}">
 
-        border: 1px solid red;
-        background: #7fe;
-
-    }
-    .slider > div{
-        border: 1px solid yellow;
-        margin-left: 7%;
-    }
-
-    table{
-        margin-top: 70px;
-    }
-
-    .paginateLinks{
-        border: 1px solid black;
-        float: right;
-        margin-bottom: 30px;
-    }
-
-    table{
-        text-align: center;
-    }
-
-    .footer{
-        clear: both;
-    }
-    </style>
 @endsection
 
 
 @section('content')
 
-@include('layouts.partials.logo')
+@include('layouts.partials.slider')
 
+<h1 id="produits" class="exemple">Exemples de nos produits.</h1>
 <div class="row slider">
 
     {{-- slider 1 --}}
@@ -58,17 +24,17 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('img/1_iphone.jpg') }}" alt="First slide">
+                <img class="d-block w-100" src="{{ asset('img/1.jpg') }}" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
-                        <h5>titre</h5>
-                        <p>beaucoup de contenu</p>
+                          
+                          
                     </div>
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('img/huawei-pc.jpg') }}" alt="Second slide">
+                <img class="d-block w-100" src="{{ asset('img/2.jpg') }}" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('img/t-shirt.jpg') }}" alt="Third slide">
+                <img class="d-block w-100" src="{{ asset('img/3.jpg') }}" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -93,17 +59,17 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('img/1_iphone.jpg') }}" alt="First slide">
+                <img class="d-block w-100" src="{{ asset('img/t-shirt.jpg') }}" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
-                        <h5>titre</h5>
-                        <p>beaucoup de contenu</p>
+                          
+                          
                     </div>
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('img/huawei-pc.jpg') }}" alt="Second slide">
+                <img class="d-block w-100" src="{{ asset('img/21.jpg') }}" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('img/t-shirt.jpg') }}" alt="Third slide">
+                <img class="d-block w-100" src="{{ asset('img/24.jpg') }}" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
@@ -128,17 +94,17 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('img/1_iphone.jpg') }}" alt="First slide">
+                <img class="d-block w-100" src="{{ asset('img/37.png') }}" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
-                        <h5>titre</h5>
-                        <p>beaucoup de contenu</p>
+                          
+                          
                     </div>
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('img/huawei-pc.jpg') }}" alt="Second slide">
+                <img class="d-block w-100" src="{{ asset('img/39.png') }}" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('img/t-shirt.jpg') }}" alt="Third slide">
+                <img class="d-block w-100" src="{{ asset('img/43.jpg') }}" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
@@ -157,6 +123,7 @@
 
 
 {{-- examples de produits (selected from database) --}}
+<h1>Liste des produits</h1>
 
 <table class="table table-bordered">
         <thead>
@@ -197,5 +164,5 @@
 
 
 @section('js')
-
+      <script src="{{asset('js/index.js')}}"></script>
 @endsection

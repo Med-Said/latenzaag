@@ -15,7 +15,8 @@ class PannierController extends Controller
      */
     public function __construct()
     {
-
+        //n'accepte que les utilisateurs authentifie
+        $this->middleware('auth');
     }
 
     /**

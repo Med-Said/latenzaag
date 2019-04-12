@@ -17,6 +17,8 @@ class AdminController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('admin');
+
         $this->utilisateurs = DB::table('users')->get();
 
         $this->articles = DB::table('articles_stocks')->get();

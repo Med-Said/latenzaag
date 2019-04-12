@@ -55,12 +55,10 @@ class LoginController extends Controller
 
     public function __construct()
     {
+        $this->middleware('guest')->except('logout');
+
         if (session('nbrArticles') == null)  {
             session(['nbrArticles' => 0]);
-        }
-
-        $this->middleware('guest')->except('logout');
+        }       
     }
-
-
 }
