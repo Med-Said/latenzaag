@@ -58,14 +58,11 @@ class ArticleStockController extends Controller
         
 
         if ($request->hasFile('img')) {
-
             //save image in this format(id.extension ex : 7.jpg)
             $image = $request->img;
             $fileName = $image->getClientOriginalName();
             $fileExtension = $image->getClientOriginalExtension();
-
             //en plus de laravel validate , manuel image verification!
-
             if($fileExtension != 'jpg' && $fileExtension != 'jpeg' && $fileExtension != 'png'){
                 return redirect('/manage');
             }

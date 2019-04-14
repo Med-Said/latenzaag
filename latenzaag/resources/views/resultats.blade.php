@@ -23,7 +23,7 @@
 
 @section('content')
 
-<h2>Resultats de votre recherche ' <em>{{$mot}}</em> '</h2>
+<h2>Résultats de votre recherche ' <em>{{$mot}}</em> '</h2>
 
 @foreach ($res as $item)
 <div class="card" style="width: 18rem;">

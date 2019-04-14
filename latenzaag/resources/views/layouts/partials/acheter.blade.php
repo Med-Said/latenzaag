@@ -1,5 +1,5 @@
 <div class="card border-primary mb-3" style="max-width: 18rem;">
-        <div class="card-header">Total a payer : {{$totalAPayer}}</div>
+        <div class="card-header">Total a payer : {{$totalAPayer}} DT</div>
         <div class="card-body text-primary">
           <h5 class="card-title">Merci pour votre fidelite</h5>
           <div class="row">
