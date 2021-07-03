@@ -25,4 +25,4 @@ vous devez les indiquer dans le fichier .env qui se trouve a la racin du projet.
 /database/migrations : les définitions des tables de la base de données
 
 ************** le projet est disponible su le site github.com **************
-lien vers le projet ------> https://github.com/Med-Said/latenzaag
+lien vers le projet ------> https://github.com/mbareck7/latenzaag
